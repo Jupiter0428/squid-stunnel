@@ -1,0 +1,13 @@
+[Unit]
+Description=Stunnel
+After=network.target
+
+[Service]
+ExecStart=/bin/sh -c "/usr/bin/stunnel /etc/stunnel/stunnel.conf"
+User=root
+Type=simple
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
